@@ -1,0 +1,63 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 gen-spacer"></div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-4">
+            <div class="container">
+                <mat-card class="form-card-properties form-card-5">
+                    <form class="form-wrapper">
+                      <div class="container" style="text-align: center">
+                        <h3>Register</h3>
+                        &nbsp;
+                      </div>
+              
+                      <mat-divider></mat-divider>
+              
+                      &nbsp;
+              
+                      <mat-form-field class="form-input-full-width">
+                        <input type="text" matInput placeholder="Name" [(ngModel)]="data.Item.name" name="name">
+                      </mat-form-field>
+              
+                      <mat-form-field class="form-input-full-width">
+                        <input type="text" matInput placeholder="Surname" [(ngModel)]="data.Item.surname" name="surname">
+                      </mat-form-field>
+              
+                      <mat-form-field class="form-input-full-width">
+                        <input type="email" matInput placeholder="Email" [(ngModel)]="data.Item.email" name="email">
+                      </mat-form-field>
+              
+                      <mat-form-field class="form-input-full-width">
+                          <input type="text" matInput placeholder="Username" [(ngModel)]="data.Item.username" name="username">
+                        </mat-form-field>
+              
+                      <mat-form-field class="form-input-full-width">
+                        <input type="password" matInput placeholder="Password" [(ngModel)]="data.Item.password" name="password">
+                      </mat-form-field>
+              
+                      <mat-form-field class="form-input-full-width">
+                        <input type="password" matInput placeholder="Re-Type Password" [(ngModel)]="data.Item.retype" name="retype">
+                      </mat-form-field>
+              
+                      &nbsp;
+              
+                      <button mat-raised-button color="primary" (click)="register(data)" class="form-button-properties">Register</button>
+              
+                    </form>
+                </mat-card>
+              </div>
+              
+        </div>
+
+        <div class="col-sm-4"></div>
+    </div>
+    
+</div>
+<!-- <my-component></my-component> -->
+  

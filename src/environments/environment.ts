@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  awsLoginUrl: 'https://kpj57ajajb.execute-api.eu-west-1.amazonaws.com/dev/users/login',
+  awsRegisterUrl: 'https://kpj57ajajb.execute-api.eu-west-1.amazonaws.com/dev/users/add'
 };
 
 /*

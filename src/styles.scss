@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.form-wrapper {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.gen-spacer {
+    min-height: 100px;
+}
+
+.form-input-full-width {
+    width: 100%;
+}
+
+.form-card-properties {
+    margin: auto;
+    min-height: 350px;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+}
+
+.type-card-properties {
+    margin: auto;
+    min-height: 130px;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form-button-properties {
+    width: 100%;
+}
+
+.information-banner {
+    width: 100%;
+    min-height: 270px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+    border-bottom: solid;
+    border-bottom-color: green;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+}
+
+.mat-icon {
+    font-size: 85px;
+    padding-right: 80px;
+}
