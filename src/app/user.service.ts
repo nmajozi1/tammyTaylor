@@ -11,8 +11,8 @@ import { environment } from '../environments/environment';
 })
 export class UserService {
 
-  private LoginUrl = environment.awsLoginUrl;
-  private RegisterUrl = environment.awsRegisterUrl;
+  private LoginUrl: string = environment.awsLoginUrl;
+  private RegisterUrl: string = environment.awsRegisterUrl;
 
   constructor(
     private http: HttpClient,
