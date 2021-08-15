@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { EMPTY } from "rxjs";
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { map, mergeMap, catchError, tap } from 'rxjs/operators';
 import { UserService } from "src/app/user.service";
 
 @Injectable()
@@ -12,7 +13,8 @@ export class UserEffects {
         mergeMap((action) => this.userService.login(action)
             .pipe(
                 map(userInfo => ({ type: '[Login API] User Login Success', payload: userInfo })),
-                catchError(() => EMPTY)
+                catchError(() => EMPTY),
+                tap(() => this.router.navigate(['customer']))
             ))
         )
     );
@@ -22,13 +24,14 @@ export class UserEffects {
         mergeMap((action) => this.userService.register(action)
             .pipe(
                 map(regInfo => ({ type: '[Register API] User Register Success', payload: regInfo })),
-                catchError(() => EMPTY)
+                catchError(() => EMPTY),
             )
         )
     ))
 
     constructor(
         private actions$: Actions,
-        private userService: UserService
+        private userService: UserService,
+        private router: Router,
     ) {}
 }

@@ -1,7 +1,6 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import { 
   CustomerType,
-  CustomerTypeCompleted,
 } from '../actions/journey.action';
 
 export const initialState: ReadonlyArray<any> = [];
@@ -13,7 +12,4 @@ export const journeyReducer = createReducer(
 
       return [...state, customerType];
   }),
-  on(CustomerTypeCompleted, (state, payload) => {
-      return [...state, payload];
-  }),
-);
+); 

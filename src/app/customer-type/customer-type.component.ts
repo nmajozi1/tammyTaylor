@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { CustomerType } from '../state/actions/journey.action';
 
 @Component({
   selector: 'app-customer-type',
@@ -7,21 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerTypeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store: Store
+  ) { }
 
   ngOnInit(): void {
   }
 
-  public women(): void {
-    console.log("Women");
-  }
-  
-  public men(): void {
-    console.log("Men");
-  }
-  
-  public children(): void {
-    console.log("Children");
+  public customerType(customerType: string): void {
+    this.store.dispatch(CustomerType({ Type: customerType }));
   }
 
 }

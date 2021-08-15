@@ -23,7 +23,7 @@ export class UserService {
     console.log('DATA: ', data);
     return this.http.post<IUser>(this.LoginUrl, data)
     .pipe(retry(1),
-    catchError(this.errorHandler.handleError));
+    catchError(this.errorHandler.handleError))
   }
 
   register(userData: any): Observable<any> {

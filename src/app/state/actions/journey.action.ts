@@ -6,7 +6,3 @@ export const CustomerType = createAction(
         Type: string 
     }>()
 );
-
-export const CustomerTypeCompleted = createAction(
-    '[Customer Type Component] selct customer type completed'
-);
