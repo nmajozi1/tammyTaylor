@@ -27,6 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CatagoriesComponent } from './catagories/catagories.component';
 import { CustomerTypeComponent } from './customer-type/customer-type.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { ServiceComponent } from './service/service.component';
+import { journeyReducer } from './state/reducers/journey.reducers';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import { MatIconModule } from '@angular/material/icon';
     ProfileComponent,
     TimePickerComponent,
     CatagoriesComponent,
-    CustomerTypeComponent
+    CustomerTypeComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +60,15 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     MatIconModule,
     EffectsModule.forRoot([UserEffects]),
-    StoreModule.forRoot({ user: userReducer }),
+    StoreModule.forRoot({ user: userReducer, journey: journeyReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     }),
   ],
   providers: [],
