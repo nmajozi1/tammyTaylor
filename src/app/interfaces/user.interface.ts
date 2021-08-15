@@ -7,4 +7,15 @@ export interface IUser {
     TableName: string;
     retype?: string;
     role?: string;
-}
+};
+
+export interface ILoginResponse {
+    type: string;
+    payload: IPayload;
+};
+
+export interface IPayload {
+    success: Boolean,
+    message: string,
+    data: IUser,
+};
